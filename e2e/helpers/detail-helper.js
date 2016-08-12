@@ -155,7 +155,7 @@ helper.editComment = function() {
       },
 
       saveComment: async function () {
-          el.$('.save-comment').click()
+          el.$('.save-comment').click();
           await browser.waitForAngular();
       }
   }
@@ -204,7 +204,7 @@ helper.history = function() {
         },
 
         editLastComment: async function() {
-            let lastComment = el.$$(".comment-wrapper").last()
+            let lastComment = el.$$(".comment-wrapper").last();
             browser
                .actions()
                .mouseMove(lastComment)
@@ -215,7 +215,8 @@ helper.history = function() {
         },
 
         deleteLastComment: async function() {
-            let lastComment = el.$$(".comment-wrapper").last()
+            let lastComment = el.$$(".comment-wrapper").last();
+
             browser
                .actions()
                .mouseMove(lastComment)
@@ -236,7 +237,7 @@ helper.history = function() {
         },
 
         enableEditModeLastComment: async function() {
-            let lastComment = el.$$(".comment-wrapper").last()
+            let lastComment = el.$$(".comment-wrapper").last();
             browser
                .actions()
                .mouseMove(lastComment)

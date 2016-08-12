@@ -179,7 +179,7 @@ common.dragEnd = function(elm) {
         let count = await $$('.gu-mirror').count();
 
         return count === 0;
-    }, 1000);
+    }, 5000);
 };
 
 common.drag = async function(elm, elm2) {
@@ -201,6 +201,7 @@ common.drag = async function(elm, elm2) {
             }
 
             event.which = 1;
+
             node.dispatchEvent(event);
         }
 

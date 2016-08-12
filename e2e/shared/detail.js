@@ -225,6 +225,7 @@ shared.historyTesting = async function(screenshotsFolder) {
     //Deleting last comment
     let deletedCommentsCounter = await historyHelper.countDeletedComments();
     await historyHelper.deleteLastComment();
+
     let newDeletedCommentsCounter = await historyHelper.countDeletedComments();
     expect(newDeletedCommentsCounter).to.be.equal(deletedCommentsCounter+1);
     await utils.common.takeScreenshot(screenshotsFolder, "deleted comment");
@@ -253,8 +254,7 @@ shared.historyTesting = async function(screenshotsFolder) {
 
     let activitiesCounter = await historyHelper.countActivities();
 
-    expect(newCommentsCounter).to.be.least(activitiesCounter);
-    
+    expect(newCommentsCounter).to.be.least(1);
 }
 
 shared.blockTesting = async function() {
@@ -345,7 +345,6 @@ shared.attachmentTesting = async function() {
     await attachmentHelper.upload(fileToUpload, 'testing image ' + date);
 
     await attachmentHelper.upload(fileToUploadImage, 'testing image ' + date);
-    await browser.sleep(5000);
 
     attachmentHelper.attachmentLinks().last().click();
 

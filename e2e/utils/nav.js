@@ -75,7 +75,7 @@ var actions = {
         return common.waitLoader();
     },
     task: async function(index) {
-        let task = $$('div[tg-taskboard-task] a.task-name').get(index);
+        let task = $$('tg-card .card-title a').get(index);
 
         await common.link(task);
 
