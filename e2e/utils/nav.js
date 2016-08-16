@@ -47,7 +47,7 @@ var actions = {
         return common.waitLoader();
     },
     backlog: async function() {
-        await common.link($('#nav-backlog a'));
+        await common.link($$('#nav-backlog a').first());
 
         return common.waitLoader();
     },

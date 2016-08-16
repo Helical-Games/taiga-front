@@ -244,6 +244,8 @@ shared.historyTesting = async function(screenshotsFolder) {
     let title = detailHelper.title();
     title.setTitle('changed');
     await title.save();
+    await utils.notifications.success.close();
+
     newCommentsCounter = await historyHelper.countComments();
 
     expect(newCommentsCounter).to.be.equal(commentsCounter+1);
