@@ -8,7 +8,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
-describe('admin - roles', function() {
+describe.only('admin - roles', function() {
     before(async function(){
         browser.get(browser.params.glob.host + 'project/project-0/admin/roles');
 
