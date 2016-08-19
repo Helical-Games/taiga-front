@@ -77,15 +77,12 @@ describe('custom-fields', function() {
 
             it('create', async function() {
                 let oldCountCustomFields = await customFieldsHelper.getCustomFiledsByType(typeIndex).count();
-
                 await customFieldsHelper.create(typeIndex, 'test1-text', 'desc1', 1);
-
                 // debounce :(
                 await utils.notifications.success.open();
                 await browser.sleep(2500);
 
                 await customFieldsHelper.create(typeIndex, 'test1-multi', 'desc1', 3);
-
                 // debounce :(
                 await utils.notifications.success.open();
                 await browser.sleep(2500);

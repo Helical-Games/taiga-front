@@ -291,6 +291,7 @@ shared.attachmentTesting = async function() {
 
     // Uploading attachment
     let attachmentsLength = await attachmentHelper.countAttachments();
+
     var fileToUpload = commonUtil.uploadFilePath();
 
     await attachmentHelper.upload(fileToUpload, 'This is the testing name ' + date);
@@ -313,7 +314,6 @@ shared.attachmentTesting = async function() {
     await attachmentHelper.renameLastAttchment('This is the new testing name ' + date);
     name = await attachmentHelper.getLastAttachmentName();
     expect(name).to.be.equal('This is the new testing name ' + date);
-
     // Deprecating
     let deprecatedAttachmentsLength = await attachmentHelper.countDeprecatedAttachments();
     await attachmentHelper.deprecateLastAttachment();

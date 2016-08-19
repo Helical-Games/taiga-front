@@ -50,7 +50,8 @@ describe.only('admin - members', function() {
         });
 
         it('submit', async function() {
-            newMemberLightbox.submit();
+            await browser.sleep(1000);
+            await newMemberLightbox.submit();
 
             await newMemberLightbox.waitClose();
 

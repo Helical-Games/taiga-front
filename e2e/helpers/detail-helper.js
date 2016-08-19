@@ -324,9 +324,7 @@ helper.attachment = function() {
         },
         upload: async function(filePath, name) {
             let addAttach = el.$('#add-attach');
-
             let countAttachments = await $$('tg-attachment').count();
-
             let toggleInput = function() {
                 $('#add-attach').toggle();
             };
@@ -341,8 +339,8 @@ helper.attachment = function() {
                 return !!count;
             }, 5000);
 
-
             await el.$('tg-attachment .editable-attachment-comment input').sendKeys(name);
+            await browser.sleep(500);
             await browser.actions().sendKeys(protractor.Key.ENTER).perform();
             await browser.executeScript(toggleInput);
             await browser.waitForAngular();

@@ -25,6 +25,10 @@ helper.links = function() {
             return el.$$(".e2e-wiki-page-link a.link-title");
         },
 
+        row: function(index) {
+            return el.$$(".e2e-wiki-page-link").get(index);
+        },
+
         getNameOf: async function(index) {
             let item = await obj.get(index);
             return item.getText();
@@ -42,7 +46,8 @@ helper.links = function() {
 };
 
 helper.dragAndDropLinks = async function(indexFrom, indexTo) {
-    let selectedLink = helper.links().get(indexFrom);
+    let selectedLink = helper.links().row(indexFrom).$('.dragger');
+
     let newPosition = helper.links().get(indexTo).getLocation();
     return utils.common.drag(selectedLink, newPosition);
 };

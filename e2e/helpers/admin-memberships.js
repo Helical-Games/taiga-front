@@ -28,7 +28,7 @@ helper.getNewMemberLightbox = function() {
             el.$$('.remove-fieldset').get(index).click();
         },
         submit: function() {
-            el.$('.submit-button').click();
+            return el.$('.submit-button').click();
         }
     };
 

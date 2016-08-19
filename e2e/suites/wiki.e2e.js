@@ -48,7 +48,7 @@ describe('wiki', function() {
         expect(url).to.be.equal(browser.params.glob.host + 'project/project-0/wiki/' + currentWiki.slug);
     });
 
-    it("drag & drop links", async function() {
+    utils.common.browserSkip('internet explorer', "drag & drop links", async function() {
         let nameOld = await wikiHelper.links().getNameOf(0);
 
         await wikiHelper.dragAndDropLinks(0, 1);
